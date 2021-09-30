@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import java.util.Objects;
+
 import br.edu.ifsp.scl.ads.pdm.intents.databinding.ActivityOutraBinding;
 
 public class OutraActivity extends AppCompatActivity {
@@ -19,7 +21,7 @@ public class OutraActivity extends AppCompatActivity {
         activityOutraBinding = ActivityOutraBinding.inflate(getLayoutInflater());
         setContentView(activityOutraBinding.getRoot());
 
-        getSupportActionBar().setTitle("Outra Activity");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Outra Activity");
         getSupportActionBar().setSubtitle("Recebe e retorna o valor");
 
         activityOutraBinding.recebidoTv.setText(getIntent().getStringExtra(PARAMETRO));
